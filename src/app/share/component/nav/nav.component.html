@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg p-3 navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="logoicon">LOGO ICON</a>
+    <button appNavbarhideshow  [NavBarClass]="'show'" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 subLi">
+        <li class="nav-item" routerLinkActive="active" appShowClass [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link " aria-current="page" routerLink="home">Dashbord</a>
+        </li>
+
+
+        <li  class="nav-item dropdown newone"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}" >
+          <a appDropdown  appBlur   class="nav-link dropdown-toggle "
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+            user
+        </a>
+        <!-- <span>hello</span> -->
+          <ul  appSelfToggle class="dropdown-menu " >
+            <li   ><a class="dropdown-item" routerLinkActive="active"  routerLink="/table">User Table</a></li>
+            <li   ><a class="dropdown-item" routerLinkActive="active" routerLink="/card">Create User</a></li>
+          </ul>
+        </li>
+
+
+
+<!--
+
+    <li class="dropdown" routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}"   >
+          <button class="btn btn-secondary" appBlur  appDropdown type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             button
+          </button>
+          <ul class="dropdown-menu "appSelfToggle  >
+
+            <li><a class="dropdown-item" routerLinkActive="active"  routerLink="/table">User Table</a></li>
+            <li><a class="dropdown-item" >Another action</a></li>
+          </ul>
+        </li> -->
+
+
+
+        <li class="nav-item" routerLinkActive="active" appShowhide [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="chart">chart</a>
+        </li>
+        <li>
+        <button  (click)="LogOut()" color="primary"   mat-stroked-button type="button" >Log out</button>
+        </li>
+        <li class="nav-item mr-5" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" tabindex="-1" aria-disabled="true"><i class="fa-solid fa-vector-square"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- appBlur appDropdown  -->
+
+<!-- <li class="nav-item dropdown newone"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}" >
+          <a
+            class="nav-link dropdown-toggle show"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            user
+          </a>
+          <ul   class="dropdown-menu" >
+            <li appShowClass><a class="dropdown-item" routerLinkActive="active"  routerLink="/table">User Table</a></li>
+            <li appShowClass><a class="dropdown-item" routerLinkActive="active" routerLink="/card">Create User</a></li>
+          </ul>
+        </li> -->
+
+
+
+
+<!--
+<li>
+
+<button appBlur appDropdown type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  button
+</button>
+
+ <ul  class="dropdown-menu " (click)="OnAncorclick1()"  appSelfToggle>
+   <li><a (click)="OnAncorclick2()" class="dropdown-item" routerLinkActive="active"  routerLink="/table">User Table</a></li>
+   <li><a class="dropdown-item" routerLinkActive="active" routerLink="/card">Create User</a></li>
+ </ul>
+</li> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,204 @@
+{
+  "progress": [
+    {
+      "type": "Overall",
+      "brTag":"Progress",
+      "per": 120
+    },
+    {
+      "type": "Product",
+      "brTag":"Analytics",
+      "per": 10
+    },
+    {
+      "type": "User",
+      "brTag":"Analytics",
+      "per": 10
+    }
+  ],
+  "users": [
+    {
+      "Name": "Jhon Doe",
+      "TranactionCode": 25,
+      "InvestAmount": 40000,
+      "InvestRate": 3
+    },
+    {
+      "Name": "Jane Smith",
+      "TranactionCode": 30,
+      "InvestAmount": 50000,
+      "InvestRate": 5
+    },
+    {
+      "Name": "Bob Johnson",
+      "TranactionCode": 40,
+      "InvestAmount": 70000,
+      "InvestRate": 12
+    },
+    {
+      "Name": "Sara Lee",
+      "TranactionCode": 28,
+      "InvestAmount": 45000,
+      "InvestRate": 4
+    },
+    {
+      "Name": "Tom Jackson",
+      "TranactionCode": 35,
+      "InvestAmount": 60000,
+      "InvestRate": 8
+    },
+    {
+      "Name": "Amy Chen",
+      "TranactionCode": 27,
+      "InvestAmount": 42000,
+      "InvestRate": 2
+    },
+    {
+      "Name": "Mike Kim",
+      "TranactionCode": 45,
+      "InvestAmount": 80000,
+      "InvestRate": 15
+    },
+    {
+      "Name": "Grace Lee",
+      "TranactionCode": 32,
+      "InvestAmount": 55000,
+      "InvestRate": 6
+    },
+    {
+      "Name": "Eric Wong",
+      "TranactionCode": 29,
+      "InvestAmount": 48000,
+      "InvestRate": 3
+    },
+    {
+      "Name": "Lucas Rodriguez",
+      "TranactionCode": 37,
+      "InvestAmount": 65000,
+      "InvestRate": 10
+    },
+    {
+      "Name": "Karen Wilson",
+      "TranactionCode": 31,
+      "InvestAmount": 42000,
+      "InvestRate": 3
+    },
+    {
+      "Name": "Dan Brown",
+      "TranactionCode": 43,
+      "InvestAmount": 75000,
+      "InvestRate": 13
+    },
+    {
+      "Name": "Anna Nguyen",
+      "TranactionCode": 26,
+      "InvestAmount": 50000,
+      "InvestRate": 4
+    },
+    {
+      "Name": "Paul Kim",
+      "TranactionCode": 28,
+      "InvestAmount": 46000,
+      "InvestRate": 2
+    },
+    {
+      "Name": "David Lee",
+      "TranactionCode": 33,
+      "InvestAmount": 62000,
+      "InvestRate": 7
+    },
+    {
+      "Name": "John Doe",
+      "TranactionCode": 25,
+      "InvestAmount": 40000,
+      "InvestRate": 3
+    },
+    {
+      "Name": "Richard Garcia",
+      "TranactionCode": 30,
+      "InvestAmount": 50000,
+      "InvestRate": 5
+    },
+    {
+      "Name": "Kenneth Garcia",
+      "TranactionCode": 40,
+      "InvestAmount": 70000,
+      "InvestRate": 12
+    },
+    {
+      "Name": "Kevin Davis",
+      "TranactionCode": 28,
+      "InvestAmount": 45000,
+      "InvestRate": 4
+    },
+    {
+      "Name": "Tom Jackson",
+      "TranactionCode": 35,
+      "InvestAmount": 60000,
+      "InvestRate": 8
+    },
+    {
+      "Name": "Amy Chen",
+      "TranactionCode": 27,
+      "InvestAmount": 42000,
+      "InvestRate": 2
+    },
+    {
+      "Name": "Mike Kim",
+      "TranactionCode": 45,
+      "InvestAmount": 80000,
+      "InvestRate": 15
+    },
+    {
+      "Name": "Grace Lee",
+      "TranactionCode": 32,
+      "InvestAmount": 55000,
+      "InvestRate": 6
+    },
+    {
+      "Name": "Eric Wong",
+      "TranactionCode": 29,
+      "InvestAmount": 48000,
+      "InvestRate": 3
+    },
+    {
+      "Name": "Lucas Rodriguez",
+      "TranactionCode": 37,
+      "InvestAmount": 65000,
+      "InvestRate": 10
+    },
+    {
+      "Name": "Karen Wilson",
+      "TranactionCode": 31,
+      "InvestAmount": 42000,
+      "InvestRate": 3
+    },
+    {
+      "Name": "Dan Brown",
+      "TranactionCode": 43,
+      "InvestAmount": 75000,
+      "InvestRate": 13
+    },
+    {
+      "Name": "Anna Nguyen",
+      "TranactionCode": 26,
+      "InvestAmount": 50000,
+      "InvestRate": 4
+    },
+    {
+      "Name": "Paul Kim",
+      "TranactionCode": 28,
+      "InvestAmount": 46000,
+      "InvestRate": 2
+    },
+    {
+      "Name": "David Lee",
+      "TranactionCode": 33,
+      "InvestAmount": 62000,
+      "InvestRate": 7
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

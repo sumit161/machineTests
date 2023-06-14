@@ -1,0 +1,246 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+      <div class="row">
+        <div class="col-sm-4 mr-2">
+          <!-- username =========================================================================-->
+          <div class="form-group">
+            <label for="username">*First Name</label>
+            <input
+              type="text"
+              formControlName="userName"
+              id="username"
+              class="form-control"
+            />
+          </div>
+
+          <!-- validation -->
+          <ng-container
+            *ngIf="f['lastname'].invalid && getUserNameControl.touched"
+          >
+            <p
+              class="alert alert-danger"
+              *ngIf="getUserNameControl.hasError('required')"
+            >
+              Username is Mandetory
+            </p>
+            <p
+              class="alert alert-warning"
+              *ngIf="getUserNameControl.hasError('noSpaceerror')"
+            >
+              {{getUserNameControl.errors?.['noSpaceerror']}}
+            </p>
+          </ng-container>
+
+          <ng-container *ngIf="f['userName'].invalid && f['userName'].dirty">
+            <p
+              class="alert alert-danger"
+              *ngIf="f['userName'].hasError('maxlength')"
+            >
+              Username maxlength should be
+              {{f['userName'].errors?.['maxlength'].requiredLength}} and actual
+              length is
+              {{f['userName'].errors?.['maxlength'].actualLength}}
+            </p>
+            <p
+              class="alert alert-danger"
+              *ngIf="f['userName'].hasError('minlength')"
+            >
+              Username minlength should be
+              {{f['userName'].errors?.['minlength'].requiredLength}} and actual
+              length is
+              {{f['userName'].errors?.['minlength'].actualLength}}
+            </p>
+          </ng-container>
+        </div>
+        <div class="col-sm-4">
+          <!-- last name========================================================================= -->
+          <div class="form-group">
+            <label for="lastname">*Last Name</label>
+            <input
+              type="text"
+              formControlName="lastname"
+              id="lastname"
+              class="form-control"
+            />
+          </div>
+          <ng-container *ngIf="f['lastname'].invalid && f['lastname'].touched">
+            <p
+              class="alert alert-danger"
+              *ngIf="f['lastname'].hasError('required')"
+            >
+              lastname is Mandetory
+            </p>
+          </ng-container>
+
+          <ng-container *ngIf="f['lastname'].invalid && f['lastname'].dirty">
+            <p
+              class="alert alert-danger"
+              *ngIf="f['lastname'].hasError('maxlength')"
+            >
+              lastname maxlength should be
+              {{f['lastname'].errors?.['maxlength'].requiredLength}} and actual
+              length is
+              {{f['lastname'].errors?.['maxlength'].actualLength}}
+            </p>
+            <p
+              class="alert alert-danger"
+              *ngIf="f['lastname'].hasError('minlength')"
+            >
+              lastname minlength should be
+              {{f['lastname'].errors?.['minlength'].requiredLength}} and actual
+              length is
+              {{f['lastname'].errors?.['minlength'].actualLength}}
+            </p>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 mr-2">
+          <!-- gender========================================================================= -->
+          <!-- gender -->
+          <div class="form-group">
+            <label for="">gender</label>
+            <select class="form-control">
+              <option value="{{ item }}" *ngFor="let item of genderArray">
+                {{ item }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <!-- date of birth -->
+          <div class="form-group">
+            <label for="birthDate">*BirthDaTe</label>
+            <input
+              type="date"
+              formControlName="birthDate"
+              id="birthDate"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 mr-2">
+          <!-- phone number -->
+
+          <div class="form-group">
+            <label for="phoneNumber">*phoneNumber</label>
+            <input
+              type="number"
+              formControlName="phoneNumber"
+              id="phoneNumber"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <!-- email -->
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input
+            type="text"
+            formControlName="Email"
+            id="Email"
+            class="form-control"
+          />
+          <ng-container *ngIf="f['Email'].invalid && f['Email'].touched">
+            <p
+              class="alert alert-danger"
+              *ngIf="f['Email'].hasError('required')"
+            >
+              Email is required field
+            </p>
+          </ng-container>
+          <ng-container
+            *ngIf="f['Email'].invalid && f['Email'].touched && f['Email'].dirty"
+          >
+            <p
+              class="alert alert-danger"
+              *ngIf="f['Email'].hasError('pattern')"
+            >
+              Please Enter Valid Email Id
+            </p>
+          </ng-container>
+          <ng-container *ngIf="f['Email'].invalid && f['Email'].dirty">
+            <p
+              class="alert alert-danger"
+              *ngIf="f['Email'].hasError('forbiddenError')"
+            >
+              {{f['Email'].errors?.['forbiddenError']}}
+            </p>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 mr-2">
+          <!-- password -->
+          <div class="form-group">
+            <label for="password">password</label>
+            <input
+              type="password"
+              formControlName="password"
+              id="password"
+              class="form-control"
+            />
+            <ng-container
+              *ngIf="f['password'].invalid && f['password'].touched"
+            >
+              <p
+                class="alert alert-danger"
+                *ngIf="f['password'].hasError('required')"
+              >
+                Password is mandetory
+              </p>
+              <p
+                class="alert alert-danger"
+                *ngIf="f['password'].hasError('pattern')"
+              >
+                Password should contain at least one capital letter,one
+                lowercase,one number,one sign and length is 8
+              </p>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <!-- confirm password -->
+          <div class="form-group">
+            <label for="confirmPassword">confirmPassword</label>
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              id="confirmPassword"
+              class="form-control"
+            />
+            <ng-container *ngIf="f['confirmPassword'].dirty">
+              <p
+                class="alert alert-danger"
+                *ngIf="f['confirmPassword'].value !== f['password'].value"
+              >
+                Password and confirm shoud be same
+              </p>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <!-- button -->
+      <div class="m-2">
+        <button
+          [disabled]="
+            signupForm.invalid ||
+            f['confirmPassword'].value !== f['password'].value
+          "
+          class="btn btn-primary"
+        >
+          create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,389 @@
+<h1>Create New User</h1>
+
+<mat-card class="form text-center pl-5">
+<section class="formSection my-4">
+  <div class="subtitle">
+    <h2 class="mb-4">Personal Details</h2>
+    <h4>Marked Fields are necessary <span>*</span></h4>
+  </div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+    <div class="row my-4">
+      <!-- firstname  -->
+      <div class="col-sm-4">
+        <!-- <div class="form-group">
+          <label for="">firstname*</label>
+          <input type="text" formControlName="userName" class="form-control" />
+        </div> -->
+
+
+
+
+
+
+
+        <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>firstname</mat-label>
+        <input
+          type="text"
+          placeholder="firstname"
+          formControlName="userName"
+          matInput
+        />
+        <!-- <mat-icon matSuffix>alternate_email</mat-icon> -->
+      </mat-form-field>
+
+
+
+
+
+
+        <ng-container
+          *ngIf="f['userName'].invalid && getUserNameControl.touched"
+        >
+          <p class="danger" *ngIf="getUserNameControl.hasError('required')">
+            Username is Mandetory
+          </p>
+          <p class="danger" *ngIf="getUserNameControl.hasError('noSpaceerror')">
+            {{getUserNameControl.errors?.['noSpaceerror']}}
+          </p>
+        </ng-container>
+
+        <ng-container *ngIf="f['userName'].invalid && f['userName'].dirty">
+          <p class="danger" *ngIf="f['userName'].hasError('maxlength')">
+            Username maxlength should be
+            {{f['userName'].errors?.['maxlength'].requiredLength}} and actual
+            length is
+            {{f['userName'].errors?.['maxlength'].actualLength}}
+          </p>
+          <p class="danger" *ngIf="f['userName'].hasError('minlength')">
+            Username minlength should be
+            {{f['userName'].errors?.['minlength'].requiredLength}} and actual
+            length is
+            {{f['userName'].errors?.['minlength'].actualLength}}
+          </p>
+        </ng-container>
+      </div>
+      <!-- lastname -->
+      <div class="col-sm-4">
+       <!--  <div class="form-group">
+          <label for="">lastname*</label>
+          <input formControlName="lastname" type="text" class="form-control" />
+        </div> -->
+
+
+        <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>lastname</mat-label>
+        <input
+          type="email"
+          placeholder="lastname"
+          formControlName="lastname"
+          matInput
+        />
+        <!-- <mat-icon matSuffix>alternate_email</mat-icon> -->
+      </mat-form-field>
+
+
+        <ng-container *ngIf="f['lastname'].invalid && f['lastname'].touched">
+          <p class="danger" *ngIf="f['lastname'].hasError('required')">
+            lastname is Mandetory
+          </p>
+        </ng-container>
+
+        <ng-container *ngIf="f['lastname'].invalid && f['lastname'].dirty">
+          <p class="danger" *ngIf="f['lastname'].hasError('maxlength')">
+            lastname maxlength should be
+            {{f['lastname'].errors?.['maxlength'].requiredLength}} and actual
+            length is
+            {{f['lastname'].errors?.['maxlength'].actualLength}}
+          </p>
+          <p class="danger" *ngIf="f['lastname'].hasError('minlength')">
+            lastname minlength should be
+            {{f['lastname'].errors?.['minlength'].requiredLength}} and actual
+            length is
+            {{f['lastname'].errors?.['minlength'].actualLength}}
+          </p>
+        </ng-container>
+      </div>
+    </div>
+    <!-- gender and date -->
+    <div class="row my-4">
+      <!-- gender -->
+      <div class="col-sm-4">
+
+
+        <mat-form-field appearance="fill">
+          <mat-select  placeholder="Gender">
+            <mat-option  *ngFor="let gender of genderArray" [value]="gender">
+              {{ gender }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+       <!--  <div class="form-group">
+          <label for="">gender</label>
+          <select class="form-control">
+            <option value="{{ item }}" *ngFor="let item of genderArray">
+              {{ item }}
+            </option>
+          </select>
+        </div> -->
+      </div>
+      <!-- phonenumber -->
+
+      <div class="col-sm-4">
+        <!-- <div class="form-group">
+          <label for="">Date Of Birth*</label>
+          <input type="date" formControlName="date" class="form-control" />
+        </div> -->
+
+<!--
+        <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>date</mat-label>
+        <input
+          type="date"
+          placeholder="date"
+          formControlName="date"
+          matInput
+        />
+
+      </mat-form-field> -->
+
+      <div  class="datePeaker ">
+        <mat-form-field appearance="fill" >
+          <mat-label>Select Or Enter Date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>Date Format Should be DD/MM/YYYY</mat-hint>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+        </mat-form-field>
+      </div>
+
+
+        <ng-container *ngIf="f['date'].invalid && f['date'].touched">
+          <p class="danger">
+            This field is mandetory
+          </p>
+        </ng-container>
+        <ng-container *ngIf="f['date'].valid && f['date'].touched">
+          <p>
+            <!-- {{this.signupForm.value.date}} -->
+            <!-- {{error}} -->
+          </p>
+        </ng-container>
+      </div>
+    </div>
+    <!-- email and phonenumber -->
+    <div class="row my-4">
+      <!-- email -->
+      <div class="col-sm-4">
+       <!--  <div class="form-group">
+          <label for="">Email*</label>
+          <input formControlName="Email" type="text" class="form-control" />
+        </div> -->
+
+
+        <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="Email"
+          matInput
+        />
+        <!-- <mat-icon matSuffix>alternate_email</mat-icon> -->
+      </mat-form-field>
+
+
+
+        <ng-container *ngIf="f['Email'].invalid && f['Email'].dirty">
+          <p class="danger" *ngIf="f['Email'].hasError('required')">
+            Email is required field
+          </p>
+        </ng-container>
+        <ng-container *ngIf="f['Email'].invalid && f['Email'].dirty">
+          <p class="danger" *ngIf="f['Email'].hasError('pattern')">
+            Please Enter Valid Email Id
+          </p>
+        </ng-container>
+        <ng-container *ngIf="f['Email'].invalid && f['Email'].dirty">
+          <p
+            class="alert alert-danger"
+            *ngIf="f['Email'].hasError('forbiddenError')"
+          >
+            {{f['Email'].errors?.['forbiddenError']}}
+          </p>
+        </ng-container>
+      </div>
+      <!-- phonenumber -->
+      <div class="col-sm-4">
+        <mat-form-field
+          appearance="fill"
+          color="primary"
+          class="example-full-width"
+        >
+          <mat-label>phoneNumber</mat-label>
+          <input
+            type="email"
+            placeholder="phoneNumber"
+            formControlName="phoneNumber"
+            matInput
+          />
+          <mat-icon matSuffix>alternate_email</mat-icon>
+        </mat-form-field>
+
+        <!--
+        <div class="form-group">
+          <label for="">Phone Number <span>*</span></label>
+          <input
+            type="text"
+            formControlName="phoneNumber"
+            class="form-control"
+          />
+        </div> -->
+
+        <ng-container
+          *ngIf="f['phoneNumber'].invalid && f['phoneNumber'].touched"
+        >
+
+          <p class="danger">  Phone number is mandetory</p>
+        </ng-container>
+
+        <ng-container
+          *ngIf="f['phoneNumber'].invalid && f['phoneNumber'].dirty"
+        >
+          <p
+            class="danger"
+            *ngIf="
+              f['phoneNumber'].value.length < 10 ||
+              f['phoneNumber'].value.length > 10
+            "
+          >
+            required digit is 10 but current digit is
+            {{ f["phoneNumber"].value.length }}
+            <!-- {{ f["phoneNumber"].value }} -->
+          </p>
+          <p class="danger" *ngIf="f['phoneNumber'].value.length === 10">
+            please type only numbers
+          </p>
+        </ng-container>
+        <ng-container
+          class="text-success"
+          *ngIf="f['phoneNumber'].valid && f['phoneNumber'].dirty"
+        >
+          <p
+            class="alert alert-success"
+            *ngIf="f['phoneNumber'].value.length === 10"
+          >
+            valid number
+          </p>
+        </ng-container>
+      </div>
+    </div>
+    <div class="text-left">
+      <h2 class="underline pb-4">Create Password<span>*</span></h2>
+    </div>
+    <!-- password and re enter password -->
+    <div class="row my-4">
+      <!-- password -->
+      <div class="col-sm-4">
+        <!-- <div class="form-group">
+          <label for="">Password<span>*</span></label>
+          <input formControlName="password" type="text" class="form-control" />
+        </div> -->
+
+        <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>password</mat-label>
+        <input
+          type="email"
+          placeholder="password"
+          formControlName="password"
+          matInput
+        />
+        <!-- <mat-icon matSuffix>alternate_email</mat-icon> -->
+      </mat-form-field>
+
+
+        <ng-container *ngIf="f['password'].invalid && f['password'].touched">
+          <p class="danger" *ngIf="f['password'].hasError('required')">
+            Password is mandetory
+          </p>
+          <p class="danger" *ngIf="f['password'].hasError('pattern')">
+            Password should contain at least one capital letter,one
+            lowercase,one number,one sign and length is 8
+          </p>
+        </ng-container>
+      </div>
+      <!-- re enter password -->
+      <div class="col-sm-4">
+       <!--  <div class="form-group">
+          <label for="">Re Enter Password<span>*</span></label>
+          <input
+            formControlName="confirmPassword"
+            type="text"
+            class="form-control"
+          />
+        </div> -->
+
+        <mat-form-field
+        appearance="fill"
+        color="primary"
+        class="example-full-width"
+      >
+        <mat-label>Re Enter Password</mat-label>
+        <input
+          type="text"
+          placeholder="password"
+          formControlName="confirmPassword"
+          matInput
+        />
+        <!-- <mat-icon matSuffix>alternate_email</mat-icon> -->
+      </mat-form-field>
+
+
+        <ng-container *ngIf="f['confirmPassword'].dirty">
+          <p
+            class="danger"
+            *ngIf="f['confirmPassword'].value !== f['password'].value"
+          >
+            Password and confirm shoud be same
+          </p>
+        </ng-container>
+      </div>
+    </div>
+    <div class="m-2 text-left">
+      <button mat-raised-button class="btn-lg">create</button>
+    </div>
+  </form>
+</section>
+</mat-card>
+<br />
+<br />

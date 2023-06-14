@@ -1,0 +1,35 @@
+.formSection {
+  width: 100%;
+  // height: 500px;
+  background-color: white;
+  margin-top: 50px ;
+  padding: 20px;
+  // padding-bottom: 50px;
+
+
+}
+.subtitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.underline,.subtitle{
+  border-bottom: 2px solid gray;
+}
+
+.mat-raised-button{
+  background-color: #AAA3ff;
+  color:black
+}
+.mt{
+  margin-top: 50px;
+}
+.danger{
+  color: red;
+}
+.mat-form-field{
+  width: 100%;
+}
+.datePeaker{
+  width: 315px;
+}

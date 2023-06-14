@@ -1,0 +1,204 @@
+<div class="main d-flex">
+  <mat-card class="form text-center pl-5">
+    <form [formGroup]="LogInform" class="example-form" (ngSubmit)="LogIn()">
+      <!-- login section -->
+      <div class="login" *ngIf="IsHavingAccount">
+        <!-- heading -->
+        <h1 class="mb-4 bg-info p-2 text-center text-white">Login Page</h1>
+        <!--  login username input-->
+        <div class="form-group">
+          <div class="input-group mb-3">
+
+            <mat-form-field
+              appearance="fill"
+              color="primary"
+              class="example-full-width"
+            >
+              <mat-label>Username</mat-label>
+              <input
+                type="email"
+                placeholder="Username"
+                formControlName="userName"
+                matInput
+              />
+              <mat-icon matSuffix>alternate_email</mat-icon>
+            </mat-form-field>
+
+            <ng-container
+            *ngIf="f['userName'].invalid &&f['userName'].touched"
+          >
+            <p class="text-danger" *ngIf="f['userName'].hasError('required')">
+              Username is Mandetory
+            </p>
+
+          </ng-container>
+            <!-- </form> -->
+
+            <!-- <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa-solid fa-at"></i>
+                </span>
+              </div> -->
+          </div>
+        </div>
+        <!--  login passord input-->
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <mat-form-field
+              appearance="fill"
+              color="primary"
+              class="example-full-width"
+            >
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                formControlName="password"
+                placeholder="password"
+                matInput
+              />
+              <!-- <mat-icon matSuffix>lock</mat-icon> -->
+              <!-- <mat-icon matSuffix>lock_open</mat-icon> -->
+
+            </mat-form-field>
+
+            <ng-container
+            *ngIf="f['password'].invalid &&f['password'].touched"
+          >
+            <p class="text-danger" *ngIf="f['password'].hasError('required')">
+              password is Mandetory
+            </p>
+
+          </ng-container>
+
+          </div>
+        </div>
+        <!--  login button-->
+        <div class="text-right">
+          <button class="btn-lg" mat-raised-button color="accent">
+            log-In
+          </button>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+
+
+
+
+    <form [formGroup]="LogInform" class="example-form" (ngSubmit)="LogIn()">
+      <!-- login section -->
+      <div class="login" *ngIf="!IsHavingAccount">
+        <!-- heading -->
+        <h1 class="mb-4 bg-info p-2 text-center text-white">Sign-up Page</h1>
+        <!--  login username input-->
+        <div class="form-group">
+          <div class="input-group mb-3">
+
+            <mat-form-field
+              appearance="fill"
+              color="primary"
+              class="example-full-width"
+            >
+              <mat-label>Username</mat-label>
+              <input
+                type="email"
+                placeholder="Username"
+
+                matInput
+              />
+              <mat-icon matSuffix>alternate_email</mat-icon>
+            </mat-form-field>
+
+
+
+
+
+            <!-- </form> -->
+
+            <!-- <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa-solid fa-at"></i>
+                </span>
+              </div> -->
+          </div>
+        </div>
+        <!--  login passord input-->
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <mat-form-field
+              appearance="fill"
+              color="primary"
+              class="example-full-width"
+            >
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+
+                placeholder="password"
+                matInput
+              />
+              <!-- <mat-icon matSuffix>lock</mat-icon> -->
+              <!-- <mat-icon matSuffix>lock_open</mat-icon> -->
+
+            </mat-form-field>
+          </div>
+        </div>
+        <!--  confirrm passord input-->
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <mat-form-field
+              appearance="fill"
+              color="primary"
+              class="example-full-width"
+            >
+              <mat-label>Confirm Password</mat-label>
+              <input
+                type="password"
+
+                placeholder="password"
+                matInput
+              />
+              <!-- <mat-icon matSuffix>lock</mat-icon> -->
+              <!-- <mat-icon matSuffix>lock_open</mat-icon> -->
+
+            </mat-form-field>
+          </div>
+        </div>
+        <!--  login button-->
+        <div class="text-right">
+          <button class="btn-lg" mat-raised-button color="accent">
+            sign-up
+          </button>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="text-left">
+    <p>
+      <a href="javascript:;" (click)="IsHavingAccount = !IsHavingAccount">{{
+        IsHavingAccount ? "Dont have account" : "Allready have a account"
+      }}</a>
+    </p>
+  </div>
+  </mat-card>
+</div>

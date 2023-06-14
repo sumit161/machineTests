@@ -1,0 +1,30 @@
+/* nav li {
+  font-size: 24px;
+  margin: 0 0 20px 20px;
+} */
+
+.subLi {
+  li {
+    font-size: 24px;
+    margin: 0 0 20px 20px;
+
+  }
+}
+.dropdown-menu{
+  li{
+    margin:0px ;
+    font-size: 16px;
+    padding: 0 px;
+  }
+}
+.mat-stroked-button{
+  background-color: #fff;
+}
+
+@media all and (max-width:599px){
+  .dropdown-menu.show {
+    display: inline-block;
+}
+}
+
+

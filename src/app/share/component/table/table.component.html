@@ -1,0 +1,117 @@
+<!-- <input type="text" [(ngModel)]="search" class="form-control" />
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>sr.no</th>
+      <th>TranactionCode</th>
+      <th>Name</th>
+      <th>InvestAmount</th>
+      <th>InvestRate</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of BankingArr | filter : search; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.TranactionCode }}</td>
+      <td>{{ item.Name }}</td>
+      <td>{{ item.InvestAmount }}</td>
+      <td>{{ item.InvestRate }}</td>
+      <td>
+        <button class="btn btn-dark">view Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="container mt-4">
+
+
+<div  class="table-responsive-md">
+  <div class="row">
+    <div class="col-md-9">
+      <h1>Table</h1>
+    </div>
+    <div class="col-md-3">
+      <div class="search-container mr-3">
+        <mat-form-field appearance="outline">
+          <input
+            class="ml-4 input"
+            matInput
+            placeholder="search"
+            autocomplete="off"
+            matInput
+            placeholder="Search"
+            (keyup)="filterData($event)"
+          />
+          <mat-icon matSuffix mat-icon>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+
+
+  <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>id</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+    <!-- title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell  *matHeaderCellDef>title</th>
+      <td mat-cell *matCellDef="let element">{{ element.title .trim()}}</td>
+    </ng-container>
+    <!-- price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell   *matHeaderCellDef>price</th>
+      <td mat-cell *matCellDef="let element">{{ element.price | currency:'INR' }}</td>
+    </ng-container>
+    <!-- category Column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell mat-sort-header  *matHeaderCellDef>category</th>
+      <td mat-cell *matCellDef="let element">{{ element.category }}</td>
+    </ng-container>
+    <!-- rating.rate Column -->
+    <!--   <ng-container matColumnDef="rating.rate" class="mr-2">
+      <th mat-header-cell *matHeaderCellDef>rate</th>
+      <td mat-cell *matCellDef="let element">{{ element.rating.rate }}</td>
+    </ng-container> -->
+    <!-- rating.count Column -->
+    <ng-container matColumnDef="rating.count" class="mr-2">
+      <th mat-header-cell  *matHeaderCellDef>count</th>
+      <td mat-cell *matCellDef="let element">{{ element.rating.count }}</td>
+    </ng-container>
+    <!-- image Column -->
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef>image</th>
+      <td mat-cell *matCellDef="let element">
+        <img class="px-2" src="{{ element.image }}" alt="" />
+      </td>
+    </ng-container>
+    <!-- button -->
+    <ng-container matColumnDef="option">
+      <th mat-header-cell *matHeaderCellDef>option</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-stroked-button>
+          <i class="fa-regular fa-eye"></i>
+          view
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    #paginator
+    [pageSize]="5"
+    [pageSizeOptions]="[2,4,5,10]"
+  >
+  </mat-paginator>
+</div>
+</div>
+<br />
+<br />
