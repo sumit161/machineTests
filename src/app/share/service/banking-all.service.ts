@@ -9,15 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class BankingAllService {
   productsUrl: string = `${environment.ProductsUrl}`;
-  BaseUrl: string = `${environment.bankinUrl}/users`;
-  ProgressUrl: string = `${environment.bankinUrl}/progress`;
+  // BaseUrl: string = `${environment.bankinUrl}/users`;
+  // ProgressUrl: string = `${environment.bankinUrl}/progress`;
   constructor(private _http: HttpClient) {}
-  GetAllUsers(): Observable<Iusers[]> {
-    return this._http.get<Iusers[]>(this.BaseUrl);
-  }
-  GetAllProgress(): Observable<any[]> {
-    return this._http.get<any[]>(this.ProgressUrl);
-  }
+  // GetAllUsers(): Observable<Iusers[]> {
+  //   return this._http.get<Iusers[]>(this.BaseUrl);
+  // }
+  // GetAllProgress(): Observable<any[]> {
+  //   return this._http.get<any[]>(this.ProgressUrl);
+  // }
   GetAllProducts(): Observable<any> {
     return this._http.get<any>(this.productsUrl);
   }

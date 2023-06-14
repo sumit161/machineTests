@@ -34,9 +34,9 @@ export class DashbordComponent implements OnInit {
   constructor(private _bankingAllService:BankingAllService) { }
 
   ngOnInit(): void {
-    this._bankingAllService.GetAllProgress().subscribe(res=>{
-     this.Progressarr=(res);
-    })
+    // this._bankingAllService.GetAllProgress().subscribe(res=>{
+    //  this.Progressarr=(res);
+    // })
   }
 
 

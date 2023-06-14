@@ -212,8 +212,8 @@ arr:any= [   {
   // @ViewChild('MatSort') matSort!: MatSort;
 
   ngOnInit(): void {
-    this._bankingAllService.GetAllUsers().subscribe((res) => {
-      this.BankingArr = res;
+    // this._bankingAllService.GetAllUsers().subscribe((res) => {
+      // this.BankingArr = res;
       // console.log(res);
       // this.dataSource = new MatTableDataSource(res);
       // this.dataSource.paginator = this.paginator;
@@ -221,7 +221,7 @@ arr:any= [   {
       // this.dataSource.paginator = this.paginator;
 
       // this.dataSource.sort = this.matSort;
-    });
+    // });
     this._bankingAllService.GetAllProducts().subscribe((res) => {
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;

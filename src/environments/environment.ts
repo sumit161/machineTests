@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  bankinUrl : ' http://localhost:3000',
+  // bankinUrl : ' http://localhost:3000',
   ProductsUrl : 'https://fakestoreapi.com/products/'
 };
 
